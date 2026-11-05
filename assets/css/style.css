@@ -1,0 +1,483 @@
+/* ============================================================
+   TUNG TUNG SHOP - Main Stylesheet
+   โทนสี: ม่วง-น้ำเงินเข้ม (Dark) ตัดด้วยส้ม/เหลืองทอง (Accent)
+   ============================================================ */
+:root {
+    --bg-dark: #0f0b1e;
+    --bg-darker: #0a0714;
+    --surface: #191330;
+    --surface-light: #241c42;
+    --border-color: #322b52;
+    --primary: #7b3fe4;
+    --primary-light: #9b6bff;
+    --primary-dark: #5a2bc7;
+    --accent: #ffb020;
+    --accent-light: #ffc94d;
+    --text-main: #f1edfa;
+    --text-muted: #a89fc9;
+    --success: #2ecc71;
+    --danger: #ff5470;
+    --warning: #ffb020;
+    --radius: 14px;
+    --shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    background: linear-gradient(160deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+    color: var(--text-main);
+    font-family: 'Kanit', 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ---------------- Navbar ---------------- */
+.navbar-custom {
+    background: rgba(15, 11, 30, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navbar-custom .navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, var(--primary-light), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.navbar-custom .nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    padding: 8px 16px !important;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+    color: var(--text-main) !important;
+    background: var(--surface-light);
+}
+.wallet-badge {
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    color: #241800;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ---------------- Hero ---------------- */
+.hero-section {
+    background: radial-gradient(circle at top right, rgba(123,63,228,0.35), transparent 60%),
+                radial-gradient(circle at bottom left, rgba(255,176,32,0.15), transparent 50%);
+    padding: 70px 0 50px;
+    text-align: center;
+}
+.hero-section h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+.hero-section h1 span {
+    background: linear-gradient(90deg, var(--primary-light), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero-section p { color: var(--text-muted); font-size: 1.1rem; }
+
+/* ---------------- Cards ---------------- */
+.card-custom {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s, border-color 0.25s;
+    overflow: hidden;
+    height: 100%;
+}
+.card-custom:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+}
+.card-img-wrap {
+    height: 160px;
+    background: linear-gradient(135deg, var(--surface-light), var(--bg-darker));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    overflow: hidden;
+}
+.card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.card-custom .card-body { padding: 18px; }
+.card-custom .card-title { font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; }
+.card-custom .price-tag {
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+.badge-shop {
+    background: var(--surface-light);
+    color: var(--primary-light);
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+/* ---------------- Filter bar ---------------- */
+.filter-bar {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 18px;
+    margin-bottom: 28px;
+}
+.filter-bar select, .filter-bar input {
+    background: var(--bg-darker);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 8px;
+}
+.filter-bar select:focus, .filter-bar input:focus {
+    background: var(--bg-darker);
+    color: var(--text-main);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(123,63,228,0.25);
+}
+
+/* ---------------- Buttons ---------------- */
+.btn-primary-custom {
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 10px;
+    transition: filter 0.2s;
+}
+.btn-primary-custom:hover { filter: brightness(1.15); color: #fff; }
+.btn-accent-custom {
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    border: none;
+    color: #241800;
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 10px;
+}
+.btn-accent-custom:hover { filter: brightness(1.1); color: #241800; }
+.btn-outline-custom {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 10px;
+}
+.btn-outline-custom:hover { background: var(--surface-light); color: var(--text-main); }
+
+/* ---------------- Auth forms ---------------- */
+.auth-wrapper {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+}
+.auth-box {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: var(--shadow);
+}
+.auth-box h3 { font-weight: 700; margin-bottom: 6px; }
+.auth-box .form-control {
+    background: var(--bg-darker);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+}
+.auth-box .form-control:focus {
+    background: var(--bg-darker);
+    color: var(--text-main);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(123,63,228,0.25);
+}
+
+/* ---------------- Tables (admin) ---------------- */
+.table-custom {
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    color: var(--text-main);
+}
+.table-custom th {
+    background: var(--surface-light);
+    color: var(--text-muted);
+    font-weight: 600;
+    border-color: var(--border-color);
+}
+.table-custom td { border-color: var(--border-color); vertical-align: middle; }
+
+/* ---------------- Sidebar (admin) ---------------- */
+.admin-sidebar {
+    background: var(--bg-darker);
+    min-height: 100vh;
+    border-right: 1px solid var(--border-color);
+    padding: 20px 0;
+}
+.admin-sidebar .nav-link {
+    color: var(--text-muted);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+.admin-sidebar .nav-link:hover,
+.admin-sidebar .nav-link.active {
+    background: var(--surface-light);
+    color: var(--accent);
+    border-right: 3px solid var(--accent);
+}
+.admin-stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 22px;
+}
+.admin-stat-card .stat-num { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+.admin-stat-card .stat-label { color: var(--text-muted); font-size: 0.9rem; }
+
+/* ---------------- Misc ---------------- */
+.section-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent);
+    padding-left: 12px;
+}
+.status-badge { padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+.status-pending { background: rgba(255,176,32,0.2); color: var(--accent); }
+.status-approved, .status-completed, .status-active { background: rgba(46,204,113,0.2); color: var(--success); }
+.status-rejected, .status-cancelled, .status-banned { background: rgba(255,84,112,0.2); color: var(--danger); }
+.status-sold { background: rgba(160,160,160,0.2); color: #aaa; }
+
+.footer-custom {
+    background: var(--bg-darker);
+    border-top: 1px solid var(--border-color);
+    padding: 26px 0;
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: 60px;
+}
+
+.slip-preview img { max-width: 100%; border-radius: 10px; border: 1px solid var(--border-color); }
+
+.empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+.empty-state .icon { font-size: 3rem; margin-bottom: 12px; }
+
+/* ============================================================
+   ระบบแชทผู้ใช้ <-> แอดมิน
+   ============================================================ */
+.chat-box {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.chat-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--surface-light);
+}
+.chat-avatar {
+    width: 42px; height: 42px; flex-shrink: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+}
+.chat-messages {
+    flex: 1;
+    min-height: 0;
+    height: 55vh;
+    overflow-y: auto;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--bg-darker);
+}
+.chat-empty { text-align: center; color: var(--text-muted); padding: 30px 10px; }
+.chat-chip {
+    background: var(--surface-light);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    transition: border-color 0.2s;
+}
+.chat-chip:hover { border-color: var(--primary-light); }
+
+.msg-row { display: flex; flex-direction: column; max-width: 78%; }
+.msg-row.mine { align-self: flex-end; align-items: flex-end; }
+.msg-row.theirs { align-self: flex-start; align-items: flex-start; }
+.msg-bubble {
+    padding: 9px 14px;
+    border-radius: 16px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+}
+.msg-row.mine .msg-bubble {
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    color: #fff;
+    border-bottom-right-radius: 4px;
+}
+.msg-row.theirs .msg-bubble {
+    background: var(--surface-light);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-bottom-left-radius: 4px;
+}
+.msg-meta { font-size: 0.72rem; color: var(--text-muted); margin-top: 3px; padding: 0 4px; }
+
+.chat-input { padding: 12px 16px; border-top: 1px solid var(--border-color); background: var(--surface); }
+.chat-input textarea {
+    flex: 1;
+    resize: none;
+    background: var(--bg-darker);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 12px;
+    padding: 10px 14px;
+    max-height: 140px;
+    font-family: inherit;
+}
+.chat-input textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(123,63,228,0.25);
+}
+.chat-error { color: var(--danger); font-size: 0.85rem; margin-bottom: 6px; }
+
+/* ---- หน้าแอดมิน: รายการห้อง + บทสนทนา ---- */
+.chat-admin {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 16px;
+    height: calc(100vh - 150px);
+    min-height: 420px;
+}
+.chat-list {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+}
+.chat-list input, .chat-list select {
+    background: var(--bg-darker);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+.chat-list-items { overflow-y: auto; flex: 1; }
+.thread-item {
+    padding: 11px 14px;
+    border-top: 1px solid var(--border-color);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.thread-item > div > .text-truncate { max-width: 190px; }
+.thread-item:hover, .thread-item:focus { background: var(--surface-light); outline: none; }
+.thread-item.active { background: var(--surface-light); border-left: 3px solid var(--accent); }
+.chat-panel { min-height: 0; height: 100%; }
+.chat-panel .chat-messages { height: auto; }
+
+@media (max-width: 991px) {
+    .chat-admin { grid-template-columns: 1fr; height: auto; }
+    .chat-list { max-height: 260px; }
+    .chat-panel { height: 70vh; }
+}
+
+/* ---------------- Contrast/accessibility fixes ----------------
+   Keep all secondary text readable on the dark purple theme. */
+:root {
+    --text-muted: #c4b9e8;
+    --border-color: #493d70;
+}
+
+/* Common muted/secondary text from Bootstrap and custom components */
+.text-muted,
+small,
+.form-text,
+figcaption,
+.card-custom .text-muted,
+.card-custom small,
+.card-custom .card-text,
+.hero-section p,
+.empty-state,
+.admin-stat-card .stat-label,
+.chat-empty,
+.navbar-custom .nav-link,
+.table-custom .text-muted {
+    color: #c4b9e8 !important;
+}
+
+/* Ensure normal text in cards is not dimmed by inherited opacity */
+.card-custom,
+.card-custom .card-body,
+.card-custom .card-title,
+.card-custom p,
+.card-custom span,
+.card-custom div,
+.card-custom label {
+    opacity: 1;
+}
+.card-custom .card-title { color: #f7f4ff; }
+.card-custom .price-tag { color: #ffd166 !important; }
+.badge-shop { color: #d8c7ff !important; background: #302451; }
+
+/* Form controls, placeholders, tables and pagination */
+.form-control::placeholder,
+.form-select::placeholder,
+input::placeholder,
+textarea::placeholder {
+    color: #b8add7 !important;
+    opacity: 1;
+}
+.form-label, label, .form-check-label,
+.table-custom th, .table-custom td,
+.pagination .page-link {
+    color: #e8e1fa;
+}
+.table-custom td .text-muted { color: #c4b9e8 !important; }
+
+/* Keep secondary text readable on hover and keyboard focus */
+a:hover, a:focus { color: #e0d1ff; }
